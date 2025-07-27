@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/HomePage";
+import ProfileSelector from "./components/ProfileSelector";
+import { NavbarComponent } from "./components/NavbarComponent";
 
 export default function App() {
 
@@ -7,13 +9,19 @@ export default function App() {
 
   return (
     <>
-      {/* {!hideNavbar && <Navbar />} */}
+      <NavbarComponent/>
 
       <Routes>
         <Route
           path="/"
           element={
               <Home />
+          }
+        />
+        <Route
+          path="/montagem"
+          element={
+              <ProfileSelector />
           }
         />
       </Routes>
