@@ -1,13 +1,14 @@
-import { useState } from 'react';
 import { FooterComponent } from '../../components/FooterComponent';
 import banner from '../../assets/banner.jpg';
+import pc1 from '../../assets/pc1.jpg';
+import pc2 from '../../assets/pc2.jpg';
+import pc3 from '../../assets/pc3.jpg';
+
 
 import { MdAttachMoney, MdLocalShipping, MdPersonSearch, MdSupportAgent } from "react-icons/md";
+import { FAQComponent } from '../../components/FAQComponent';
 
-interface FaqQuestion {
-    question: string;
-    answer: string;
-}
+
 
 interface Feature {
     title: string;
@@ -43,66 +44,16 @@ const features: Feature[] = [
 ];
 
 
-const faqs: FaqQuestion[] = [
-    {
-        question: 'Como funciona o orçamento personalizado?',
-        answer:
-            'Você nos informa seu orçamento e o tipo de uso que deseja (jogos, trabalho, estudos, etc). A partir disso, nossa equipe pesquisa, seleciona e monta uma configuração otimizada com peças recondicionadas testadas, entregando o melhor desempenho possível dentro do valor.'
-    },
-    {
-        question: 'Qual é o prazo de entrega?',
-        answer:
-            'Após a confirmação do pagamento, montamos, testamos e entregamos sua CPU em até 48 horas úteis, diretamente em seu domicílio apenas para o DF.'
-    },
-    {
-        question: 'Quais são os meios de pagamento?',
-        answer:
-            'Aceitamos Pix, cartão de débito, crédito (em até 12x com juros) e transferência bancária. O pagamento deve ser confirmado antes do início da montagem.'
-    },
-    {
-        question: 'A CPU vem pronta para uso?',
-        answer:
-            'Sim. Você recebe seu PC montado, limpo, testado e com sistema operacional instalado. É só ligar, conectar periféricos e começar a usar.'
-    },
-    {
-        question: 'Posso parcelar a compra?',
-        answer:
-            'Sim! Trabalhamos com parcelamento via cartão de crédito em até 12 vezes. O valor das parcelas e os juros aplicados são informados no momento da compra.'
-    },
-    {
-        question: 'Vocês compram PCs usados para troca?',
-        answer:
-            'Ainda não aceitamos trocas diretas, mas estamos desenvolvendo um programa de recompra. Em breve, você poderá trocar seu PC antigo por um desconto em um novo.'
-    },
-    {
-        question: 'Posso escolher marcas ou modelos específicos?',
-        answer:
-            'Sim, desde que estejam disponíveis no estoque.'
-    },
-    {
-        question: 'As peças são novas?',
-        answer:
-            'Sim, mas também utilizamos peças recondicionadas e testadas , todas com garantia funcional. Isso garante desempenho por um preço acessível, sem abrir mão da segurança.'
-    },
-];
+
 
 
 const HeyPCPage = () => {
-    const [faqOpen, setFaqOpen] = useState([false, false, false, false, false]);
-
-    const toggleFAQ = (index: number) => {
-        setFaqOpen((prev) => {
-            const updated = [...prev];
-            updated[index] = !updated[index];
-            return updated;
-        });
-    };
 
     return (
         <>
-        
+
             <section className="relative bg-zinc-950 py-32 px-4 w-full overflow-hidden">
-                <div className="absolute inset-0 bg-cover bg-right bg-no-repeat opacity-55" style={{ backgroundImage: `url(${banner})`}}></div>
+                <div className="absolute inset-0 bg-cover bg-right bg-no-repeat opacity-55" style={{ backgroundImage: `url(${banner})` }}></div>
 
                 <div className="absolute inset-0 bg-gradient-to-r from-black via-zinc-950/90 to-transparent"></div>
 
@@ -114,6 +65,24 @@ const HeyPCPage = () => {
                     <p className="text-gray-300 max-w-3xl mx-auto mb-10 text-lg leading-relaxed">
                         Montamos sua máquina com peças recondicionadas testadas, entregando performance de verdade com economia, agilidade e transparência. Seu setup ideal, sem complicação.
                     </p>
+                    <section className="py-20 px-4 w-full">
+                        <div className="max-w-6xl mx-auto text-center text-white">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div className="relative group overflow-hidden rounded-xl border border-zinc-700">
+                                    <img src={pc1} alt="banner-pc-1" className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" />
+                                    <div className="absolute bottom-0 left-0 w-full bg-black/60 text-white p-3 text-sm text-left">Para profissionais</div>
+                                </div>
+                                <div className="relative group overflow-hidden rounded-xl border border-zinc-700">
+                                    <img src={pc2} alt="banner-pc-2" className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" />
+                                    <div className="absolute bottom-0 left-0 w-full bg-black/60 text-white p-3 text-sm text-left">Casuais</div>
+                                </div>
+                                <div className="relative group overflow-hidden rounded-xl border border-zinc-700">
+                                    <img src={pc3} alt="banner-pc-3" className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" />
+                                    <div className="absolute bottom-0 left-0 w-full bg-black/60 text-white p-3 text-sm text-left">Verdadeiros Entusiastas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
                     <a
                         href="/#/montagem"
@@ -132,9 +101,9 @@ const HeyPCPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                             {features.map((feature, index) => (
                                 <div key={index} className="bg-zinc-900 border border-zinc-700 rounded-xl shadow-md shadow-white hover:shadow-green-500 transition ease-in-out p-6 text-white hover:text-green-500 flex flex-col items-center ">
-                                    <div className="mb-4">{feature.icon}</div>
-                                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                                    <p className="text-gray-400 text-sm">{feature.description}</p>
+                                    <div className="mb-4 ">{feature.icon}</div>
+                                    <h3 className="text-xl font-bold mb-2 ">{feature.title}</h3>
+                                    <p className="absolut text-gray-400 text-sm hover:show hidden">{feature.description}</p>
                                 </div>
                             ))}
                         </div>
@@ -158,24 +127,6 @@ const HeyPCPage = () => {
                 </div>
             </section>
 
-            <section className="bg-gradient-to-b from-zinc-800 to bg-zinc-950 py-20 px-4 w-full">
-                <div className="max-w-4xl mx-auto text-white">
-                    <h2 className="text-4xl font-bold mb-6 text-center">Perguntas</h2>
-                    {faqs.map((item, i) => (
-                        <div
-                            key={i}
-                            className="border border-zinc-700 rounded-lg p-5 cursor-pointer"
-                            onClick={() => toggleFAQ(i)}
-                        >
-                            <h3 className="text-xl font-semibold mb-2 flex justify-between items-center">
-                                {item.question}
-                                <span className="text-green-500">{faqOpen[i] ? '–' : '+'}</span>
-                            </h3>
-                            {faqOpen[i] && <p className="text-gray-400">{item.answer}</p>}
-                        </div>
-                    ))}
-                </div>
-            </section>
             <FooterComponent />
         </>
     );

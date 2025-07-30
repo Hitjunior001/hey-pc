@@ -1,4 +1,8 @@
 export const FooterComponent = () => {
+    const linkFacebook = 'https://www.facebook.com/profile.php?id=61578293273889'
+    const linkWhatsapp =  'https://api.whatsapp.com/send/?phone=5561981829709&text&type=phone_number&app_absent=0'
+
+    
     return (
         <footer className="bg-zinc-950 text-gray-400 py-12 px-6  bottom-0 w-full">
             <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-sm">
@@ -32,7 +36,7 @@ export const FooterComponent = () => {
                 <div>
                     <h4 className="text-white font-semibold mb-3">Fale Conosco</h4>
                     <ul className="space-y-2">
-                        <li><a href="https://wa.me/5561981829709" target="_blank" className="hover:text-white">WhatsApp</a></li>
+                        <li><a href={linkWhatsapp} target="_blank" className="hover:text-white">WhatsApp</a></li>
                         <li><a href="mailto:suporte.heypc@gmail.com" className="hover:text-white">E-mail</a></li>
                     </ul>
                 </div>
@@ -40,7 +44,7 @@ export const FooterComponent = () => {
                 <div>
                     <h4 className="text-white font-semibold mb-3">Redes Sociais</h4>
                     <ul className="space-y-2">
-                        <li><a href="https://facebook.com" target="_blank" className="hover:text-white">Facebook</a></li>
+                        <li><a href={linkFacebook} target="_blank" className="hover:text-white">Facebook</a></li>
                     </ul>
                 </div>
 
